@@ -54,6 +54,9 @@ public class CartServlet extends HttpServlet {
             CartItem existing = cart.get(menuId);
             existing.setQuantity(existing.getQuantity() + quantity);
 
+            // Recalculate subtotal
+            existing.setSubTotal(existing.getPrice() * existing.getQuantity());
+
         } else {
 
             CartItem item = new CartItem(
@@ -61,7 +64,9 @@ public class CartServlet extends HttpServlet {
                     restaurantId,
                     menu.getName(),
                     menu.getPrice(),
-                    quantity, quantity
+                    quantity,
+                    menu.getPrice() * quantity,
+                    menu.getImagePath() // Added imagePath
             );
 
             cart.put(menuId, item);

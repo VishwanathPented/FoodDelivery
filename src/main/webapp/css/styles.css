@@ -1,0 +1,219 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+:root {
+    /* Primary Brand Colors */
+    --primary: #ff4757;
+    --primary-hover: #ff6b81;
+    --primary-soft: rgba(255, 71, 87, 0.1);
+
+    /* Secondary Colors */
+    --secondary: #2ed573;
+    --secondary-hover: #7bed9f;
+    --warning: #ffa502;
+    --danger: #ff4757;
+
+    /* Backgrounds */
+    --bg-body: #f8f9fa;
+    --bg-surface: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+
+    /* Text */
+    --text-main: #2f3542;
+    --text-secondary: #57606f;
+    --text-muted: #a4b0be;
+
+    /* Borders & Decor */
+    --border-color: #dfe4ea;
+    --divider: #f1f2f6;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
+    --shadow-primary: 0 8px 20px rgba(255, 71, 87, 0.3);
+
+    /* Radius */
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Glassmorphism Utilities */
+.glass-effect {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0;
+    transition: background 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--primary) !important;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary) !important;
+    background-color: var(--primary-soft);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-img-top {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 50px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.4);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #fff0f1 0%, #ffffff 100%);
+    padding: 6rem 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: -webkit-linear-gradient(45deg, var(--text-main), var(--primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Utilities */
+.shadow-hover:hover {
+    box-shadow: var(--shadow-md) !important;
+}
+
+.text-primary-custom {
+    color: var(--primary) !important;
+}
+
+.bg-surface {
+    background-color: var(--bg-surface);
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+
+/* Forms */
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    background-color: #fcfcfc;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.input-group-text {
+    border-color: var(--border-color);
+    background-color: #fcfcfc;
+    border-radius: 12px;
+}
+
+/* Badge */
+.badge-custom {
+    padding: 0.5em 1em;
+    border-radius: 30px;
+    font-weight: 600;
+}

@@ -8,12 +8,13 @@ public class CartItem {
     private double price;
     private int quantity;
     private double subTotal;
-    
+    private String imagePath; // Added imagePath
+
     public CartItem() {
-		
+
 	}
 
-	public CartItem(int itemId, int restaurantId, String name, double price, int quantity, double subTotal) {
+	public CartItem(int itemId, int restaurantId, String name, double price, int quantity, double subTotal, String imagePath) {
 		super();
 		this.itemId = itemId;
 		this.restaurantId = restaurantId;
@@ -21,6 +22,7 @@ public class CartItem {
 		this.price = price;
 		this.quantity = quantity;
 		this.subTotal = subTotal;
+		this.imagePath = imagePath;
 	}
 
 	public int getItemId() {
@@ -71,11 +73,18 @@ public class CartItem {
 		this.subTotal = subTotal;
 	}
 
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
 	@Override
 	public String toString() {
 		return "CartItem [itemId=" + itemId + ", restaurantId=" + restaurantId + ", name=" + name + ", price=" + price
-				+ ", quantity=" + quantity + ", subTotal=" + subTotal + "]";
+				+ ", quantity=" + quantity + ", subTotal=" + subTotal + ", imagePath=" + imagePath + "]";
 	}
-    
-    
+
 }
